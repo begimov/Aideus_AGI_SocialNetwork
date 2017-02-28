@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">AIΔEUS</a>
+      <a class="navbar-brand" href="{{ route('home') }}">AIΔEUS</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -35,7 +35,7 @@
               <li><a href="#">Sign out</a></li>
             </ul>
           </li>
-            <li><a href="#">Sign up</a></li>
+            <li><a href="{{ route('auth.signup') }}">Sign up</a></li>
             <li><a href="#">Sign in</a></li>
       </ul>
     </div>

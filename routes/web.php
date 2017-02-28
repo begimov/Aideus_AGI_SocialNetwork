@@ -11,8 +11,18 @@
 |
 */
 
+/*
+* Home
+*/
 Route::get('/', 'HomeController@show')->name('home');
 
-Route::get('/test', function() {
-    return redirect()->route('home')->with('info', '!!!!!!!!!!!!!!');
-});
+/*
+* Auth
+*/
+Route::get('/signup', 'AuthController@getSignUp')->name('auth.signup');
+Route::post('/signup', 'AuthController@postSignUp');
+
+
+// Route::get('/test', function() {
+//     return redirect()->route('home')->with('info', '!!!!!!!!!!!!!!');
+// });
