@@ -12,6 +12,7 @@
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      @if (Auth::check())
       <ul class="nav navbar-nav">
         <li><a href="#">News</a></li>
         <li><a href="#">Colleagues</a></li>
@@ -22,11 +23,12 @@
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
+      @endif
       <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Admin panel</a></li>
+        @if (Auth::check())
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              username <span class="caret"></span>
+               {{ Auth::user()->getName() }}<span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
               <li><a href="#">Profile</a></li>
@@ -35,8 +37,10 @@
               <li><a href="#">Sign out</a></li>
             </ul>
           </li>
+          @else
             <li><a href="{{ route('auth.signup') }}">Sign up</a></li>
-            <li><a href="#">Sign in</a></li>
+            <li><a href="{{ route('auth.signin') }}">Sign in</a></li>
+          @endif
       </ul>
     </div>
   </div>
