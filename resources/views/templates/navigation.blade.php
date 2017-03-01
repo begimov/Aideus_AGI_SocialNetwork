@@ -17,11 +17,11 @@
         <li><a href="#">News</a></li>
         <li><a href="#">Colleagues</a></li>
       </ul>
-      <form class="navbar-form navbar-left">
+      <form class="navbar-form navbar-left" role="search" action="{{ route('search.results') }}">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="text" name="q" class="form-control" placeholder="Search">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default">Search</button>
       </form>
       @endif
       <ul class="nav navbar-nav navbar-right">

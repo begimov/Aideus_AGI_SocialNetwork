@@ -26,3 +26,8 @@ Route::get('/signin', 'AuthController@getSignIn')->name('auth.signin')->middlewa
 Route::post('/signin', 'AuthController@postSignIn')->middleware('guest');
 
 Route::get('/signout', 'AuthController@getSignOut')->name('auth.signout')->middleware('authenticated');
+
+/*
+* Search
+*/
+Route::get('/search', 'SearchController@search')->name('search.results')->middleware('authenticated');

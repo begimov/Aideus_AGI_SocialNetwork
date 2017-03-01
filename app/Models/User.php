@@ -39,4 +39,9 @@ class User extends Authenticatable
       }
       return "{$this->first_name} {$this->last_name}";
     }
+
+    public function getAvatarUrl($size = 50)
+    {
+      return "https://www.gravatar.com/avatar/{md5($this->email)}?d=mm&s={$size}";
+    }
 }
