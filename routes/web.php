@@ -19,13 +19,10 @@ Route::get('/', 'HomeController@show')->name('home');
 /*
 * Auth
 */
-Route::get('/signup', 'AuthController@getSignUp')->name('auth.signup');
-Route::post('/signup', 'AuthController@postSignUp');
+Route::get('/signup', 'AuthController@getSignUp')->name('auth.signup')->middleware('guest');
+Route::post('/signup', 'AuthController@postSignUp')->middleware('guest');
 
-Route::get('/signin', 'AuthController@getSignIn')->name('auth.signin');
-Route::post('/signin', 'AuthController@postSignIn');
+Route::get('/signin', 'AuthController@getSignIn')->name('auth.signin')->middleware('guest');
+Route::post('/signin', 'AuthController@postSignIn')->middleware('guest');
 
-
-// Route::get('/test', function() {
-//     return redirect()->route('home')->with('info', '!!!!!!!!!!!!!!');
-// });
+Route::get('/signout', 'AuthController@getSignOut')->name('auth.signout')->middleware('authenticated');

@@ -4,7 +4,9 @@
   <div class="container">
         <h1 class="aideus-title">AGI Community</h1>
         <p class="lead">The goal of our project is overcoming of restrictions of human thinking and solution of the most difficult and essential challenges and problems by creation of a strong artificial intelligence. We perfectly realize all complexity of the problem put by us and for this reason first of all we believe that it is necessary to ensure and support fundamental scientific research in this field.</p>
-        <a class="btn btn-default" href="#" role="button">Sign in</a> <a class="btn btn-default" href="#" role="button">Sign up</a>
+        @unless (Auth::check())
+        <a class="btn btn-default" href="{{ route('auth.signup') }}" role="button">Sign up</a> <a class="btn btn-default" href="{{ route('auth.signin') }}" role="button">Sign in</a>
+        @endunless
     <div class="row">
       <div class="col-md-8">
         <div class="aideus-icon">
